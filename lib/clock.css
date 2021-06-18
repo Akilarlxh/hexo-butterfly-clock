@@ -49,6 +49,7 @@ padding:20px
   .card-background{
     background-color: #212121;
     }
+[data-theme="dark"]
   .clock-row{
     color: #fff;
   }
