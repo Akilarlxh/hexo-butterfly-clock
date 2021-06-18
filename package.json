@@ -1,6 +1,6 @@
 {
   "name": "hexo-butterfly-clock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A clock card plugin for theme-butterfly",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "pug": "^3.0.0"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/Akilarlxh/hexo-butterfly-clock.git"
+    "type": "git",
+    "url": "https://github.com/Akilarlxh/hexo-butterfly-clock.git"
   }
 }
