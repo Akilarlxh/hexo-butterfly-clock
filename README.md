@@ -1,4 +1,4 @@
-# hexo-butterfly-envelope
+# hexo-butterfly-clock
 
 给`hexo-theme-butterfly`添加 [侧边栏电子钟](https://akilar.top/posts/4e39cf4a/)
 
