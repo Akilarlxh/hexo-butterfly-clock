@@ -7,12 +7,12 @@ const path = require('path')
 const urlFor = require('hexo-util').url_for.bind(hexo)
 const util = require('hexo-util')
 // 过滤器优先级，priority 值越低，过滤器会越早执行，默认priority是10。
-const pre_priority = hexo.config.electric_clock.priority || hexo.theme.config.electric_clock.priority
+const pre_priority = hexo.config.electric_clock.priority ?  hexo.config.electric_clock.priority : hexo.theme.config.electric_clock.priority
 const priority = pre_priority ? pre_priority : 10
 
 hexo.extend.filter.register('after_generate', function (locals) {
   // 首先获取整体的配置项名称
-  const config = hexo.config.electric_clock || hexo.theme.config.electric_clock
+  const config = hexo.config.electric_clock ? hexo.config.electric_clock : hexo.theme.config.electric_clock
   // 如果配置开启
   if (!(config && config.enable)) return
   // 集体声明配置项
