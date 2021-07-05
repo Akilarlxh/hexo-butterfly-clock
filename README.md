@@ -15,15 +15,18 @@
   ```yaml
     # electric_clock
     # see https://akilar.top/posts/4e39cf4a/
-    electric_clock:
-      enable: true # 开关
-      priority: 5 #过滤器优先权
-      enable_page: all # 应用页面
-      layout: # 挂载容器类型
-        type: class
-        name: sticky_layout
-        index: 0
-      loading: #加载动画自定义
+  electric_clock:
+    enable: true # 开关
+    priority: 5 #过滤器优先权
+    enable_page: all # 应用页面
+    exclude:
+      - /posts/
+      - /about/
+    layout: # 挂载容器类型
+      type: class
+      name: sticky_layout
+      index: 0
+    loading: #加载动画自定义
   ```
 3. 参数释义
 
@@ -31,7 +34,8 @@
   |:--|:--|:--|
   |priority|number|【可选】过滤器优先级，数值越小，执行越早，默认为10，选填|
   |enable|true/false|【必选】控制开关|
-  |enable_page|path/all|【可选】填写想要应用的页面的相对路径（即路由地址）,如根目录就填'/',分类页面就填'/categories/'。若要应用于所有页面，就填'all'，默认为all|
+  |enable_page|path|【可选】填写想要应用的页面,如根目录就填'/',分类页面就填'/categories/'。若要应用于所有页面，就填`all`，默认为`all`|
+  |exclude|path|【可选】填写想要屏蔽的页面，可以多个。写法见示例。原理是将屏蔽项的内容逐个放到当前路径去匹配，若当前路径包含任一屏蔽项，则不会挂载。|
   |layout.type|id/class|【可选】挂载容器类型，填写id或class，不填则默认为id|
   |layout.name|text|【必选】挂载容器名称|
   |layout.index|0和正整数|【可选】前提是layout.type为class，因为同一页面可能有多个class，此项用来确认究竟排在第几个顺位|
