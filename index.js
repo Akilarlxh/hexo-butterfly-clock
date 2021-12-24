@@ -19,15 +19,18 @@ hexo.extend.filter.register('after_generate', function (locals) {
       layout_type: config.layout.type,
       layout_name: config.layout.name,
       layout_index: config.layout.index ? config.layout.index : 0,
-      loading: config.loading ? urlFor(config.loading) : "https://cdn.jsdelivr.net/gh/Zfour/Butterfly-clock/clock/images/weather/loading.gif"
+      loading: config.loading ? urlFor(config.loading) : "https://unpkg.zhimg.com/hexo-butterfly-clock/lib/loading.gif",
+      clock_css: config.clock_css ? urlFor(config.clock_css) : "https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.css",
+      clock_js: config.clock_js ? urlFor(config.clock_js) : "https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.js",
+      ip_api: config.ip_api ? urlFor(config.ip_api) : "https://pv.sohu.com/cityjson?ie=utf-8"
     }
   // 渲染页面
   const temple_html_text = config.temple_html ? config.temple_html : pug.renderFile(path.join(__dirname, './lib/html.pug'),data)
   //cdn资源声明
     //样式资源
-  const css_text = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.css">`
+  const css_text = `<link rel="stylesheet" href="${data.clock_css}" />`
     //脚本资源
-  const js_text = `<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.js"></script>`
+  const js_text = `<script src="${data.ip_api}"></script><script data-pjax src="${data.clock_js}"></script>`
   //注入容器声明
   var get_layout
   //若指定为class类型的容器

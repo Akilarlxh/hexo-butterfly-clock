@@ -26,7 +26,10 @@
       type: class
       name: sticky_layout
       index: 0
-    loading: #加载动画自定义
+    loading: https://unpkg.zhimg.com/hexo-butterfly-clock/lib/loading.gif #加载动画自定义
+    clock_css: https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.css
+    clock_js: https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.js
+    ip_api: https://pv.sohu.com/cityjson?ie=utf-8
   ```
 3. 参数释义
 
@@ -40,5 +43,8 @@
   |layout.name|text|【必选】挂载容器名称|
   |layout.index|0和正整数|【可选】前提是layout.type为class，因为同一页面可能有多个class，此项用来确认究竟排在第几个顺位|
   |loading|URL|【可选】电子钟加载动画的图片|
+  |clock_css|URL|【可选】电子钟样式CDN资源|
+  |clock_js|URL|【可选】电子钟执行脚本CDN资源|
+  |ip_api|URL|【可选】获取时钟IP的API|
 # 截图
-![](https://cdn.jsdelivr.net/npm/akilar-candyassets/image/Card-Clock-b0876bb5.png)
+![](https://unpkg.zhimg.com/akilar-candyassets/image/Card-Clock-b0876bb5.png)
